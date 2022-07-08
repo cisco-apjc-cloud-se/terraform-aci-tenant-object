@@ -57,3 +57,13 @@ resource "aci_l3out_vpc_member" "side_b" {
   description   = var.path.vpc.side_b.description
   name_alias    = var.path.vpc.side_b.name_alias
 }
+
+### ACI BGP Peer Profiles Module ###
+module "bgp_peers" {
+  for_each = var.path.bgp_peers
+  source = "./modules/bgp_peers"
+
+  ### VARIABLES ###
+  path_dn  = aci_l3out_path_attachment.path.id
+  bgp_peer  = each.value
+}
