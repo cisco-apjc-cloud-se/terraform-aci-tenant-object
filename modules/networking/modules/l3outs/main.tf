@@ -106,7 +106,7 @@ resource "aci_l3out_ospf_external_policy" "ospf" {
 }
 
 ### L3Out BGP External Policy ###
-resource "aci_l3out_bgp_external_policy" "example" {
+resource "aci_l3out_bgp_external_policy" "bgp" {
   count = local.l3out.bgp_policy.enabled  == true ? 1 : 0
 
   l3_outside_dn = local.l3out.use_existing == true ? data.aci_l3_outside.l3out[0].id : aci_l3_outside.l3out[0].id
