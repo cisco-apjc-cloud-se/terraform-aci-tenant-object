@@ -1,8 +1,3 @@
-### Module Key ###
-variable "key" {
-  type = string
-}
-
 ## New Single-Object Tenant Model ##
 variable "tenant" {
   type = object({
