@@ -22,6 +22,11 @@ data "aci_l4_l7_device" "device" {
   name             = var.logical_device_context.device.device_name
 }
 
+
+resource "time_sleep" "wait_30_seconds" {
+  create_duration = "30s"
+}
+
 ### ACI L4-L7 Service Graph Instance - Logical Device Context ###
 resource "aci_logical_device_context" "node" {
   tenant_dn         = var.tenant_dn
@@ -34,6 +39,8 @@ resource "aci_logical_device_context" "node" {
   name_alias        = var.logical_device_context.name_alias
 
   relation_vns_rs_l_dev_ctx_to_l_dev = var.logical_device_context.device.tenant_name != null ? data.aci_l4_l7_device.device[0].id : var.device_map[var.logical_device_context.device.device_name].id # "uni/tn-test_acc_tenant/lDevVip-LoadBalancer01"
+
+  depends_on = [time_sleep.wait_30_seconds]
 }
 
 ### ACI L4-L7 Service Graph Instance - Consumer Interface Context ###
