@@ -1,5 +1,9 @@
 # terraform-aci-tenant-object
-Terraform module to build a ACI Tenant in entirety from single HCL/JSON nested object variable file.  This should simplify tenant configuration and allow for easier configuration changes and rollbacks.  This module also support re-using existing configuration through an optional `use_existing` parameter at most levels.  This allows Terraform to manage child objects without fully managing the parent object (i.e. Terraform can add VRFs to the common tenant without disturbing existing configuration).  Where appropriate, the module will also allow re-using configuration from other tenants though this assumes the configuraiton is already present in that tenant (i.e. common filters or shared L3outs can be leveraged from the common tenant).
+Terraform module to build a ACI Tenant in entirety from single HCL/JSON nested object variable file.  This should simplify tenant configuration and allow for easier configuration changes and rollbacks.  
+
+This module also support re-using existing configuration through an optional `use_existing` parameter at most levels.  This allows Terraform to manage child objects without fully managing the parent object (i.e. Terraform can add VRFs to the common tenant without disturbing existing configuration).  
+
+Where appropriate, the module will also allow re-using configuration from other tenants though this assumes the configuraiton is already present in that tenant (i.e. common filters or shared L3outs can be leveraged from the common tenant).
 
 This module is used in the DevNet example ACI Day 2 Terraform Examples where the same tenant configuration can evolve over time from a simple "network centric" deployment to a full "application centric" deployment including Layer 4 contracts with optional policy-based redirect (PBR) service graph, by slowing changing the tenant configuration code.
 
