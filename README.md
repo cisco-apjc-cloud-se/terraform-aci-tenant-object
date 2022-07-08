@@ -7,6 +7,9 @@ Where appropriate, the module will also allow re-using configuration from other 
 
 This module is used in the DevNet example ACI Day 2 Terraform Examples where the same tenant configuration can evolve over time from a simple "network centric" deployment to a full "application centric" deployment including Layer 4 contracts with optional policy-based redirect (PBR) service graph, by slowing changing the tenant configuration code.
 
+Please see this link for examples of how this module is used.
+[ACI Day 2 Automation with Terraform](https://github.com/cisco-apjc-cloud-se/aci-basic-day2)
+
 The input variable object for this module is structured on the ACI Tenant tab (ACI 5.2+).  The following configuration items are supported.  
 
 - Applications Profiles (aps)
