@@ -4,6 +4,10 @@ terraform {
       source  = "CiscoDevNet/aci"
       version = ">=2.0.0"
     }
+    time = {
+      source = "hashicorp/time"
+      version = "0.7.2"
+    }
   }
   experiments = [module_variable_optional_attrs]
 }
