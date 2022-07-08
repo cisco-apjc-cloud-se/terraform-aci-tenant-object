@@ -26,11 +26,6 @@ data "aci_l4_l7_device" "device" {
   name             = var.logical_device_context.device.device_name
 }
 
-
-resource "time_sleep" "wait_30_seconds" {
-  create_duration = "30s"
-}
-
 ### ACI L4-L7 Service Graph Instance - Logical Device Context ###
 resource "aci_logical_device_context" "node" {
   tenant_dn         = var.tenant_dn
@@ -70,8 +65,6 @@ module "consumer_interface" {
     bd                  = var.logical_device_context.consumer_interface.bd
     extepg              = var.logical_device_context.consumer_interface.extepg
   }
-
-  depends_on = [time_sleep.wait_30_seconds]
 }
 
 ### ACI L4-L7 Service Graph Instance - Provider Interface Context ###
@@ -99,6 +92,4 @@ module "provider_interface" {
     bd                  = var.logical_device_context.provider_interface.bd
     extepg              = var.logical_device_context.provider_interface.extepg
   }
-
-  depends_on = [time_sleep.wait_30_seconds]
 }
