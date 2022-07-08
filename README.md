@@ -7,26 +7,26 @@ The input variable object for this module is structured on the ACI Tenant tab (A
 
 - Applications Profiles (aps)
  - End Point Groups (epgs)
-  - Static with physical path
-  - Dynamic with VMM domain support
+   - Static with physical path
+   - Dynamic with VMM domain support
  - Endpoint Security Groups (esgs)
-  - EPG to ESG support
+   - EPG to ESG support
 - Contracts
  - Standard Contracts
  - Filters
 - Networking
  - Bridge Domains
-  - optional Layer 3 Subnet support
+   - optional Layer 3 Subnet support
  - L3 Outs (one or more)
-  - External EPGs
-  - Routed, Sub-interface, SVI and Floating SVI support
-  - OSPF, BGP peering support
+   - External EPGs
+   - Routed, Sub-interface, SVI and Floating SVI support
+   - OSPF, BGP peering support
  - VRFs
-  - Optional Preferred Group support
+   - Optional Preferred Group support
 - Policies
- - L4-7 Policy Based Redirection
+  - L4-7 Policy Based Redirection
 - Services
- - L4-7 Policy Based Routing Support
+  - L4-7 Policy Based Routing Support
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
