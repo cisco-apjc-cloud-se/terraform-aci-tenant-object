@@ -10,23 +10,23 @@ This module is used in the DevNet example ACI Day 2 Terraform Examples where the
 The input variable object for this module is structured on the ACI Tenant tab (ACI 5.2+).  The following configuration items are supported.  
 
 - Applications Profiles (aps)
- - End Point Groups (epgs)
-   - Static with physical path
-   - Dynamic with VMM domain support
- - Endpoint Security Groups (esgs)
-   - EPG to ESG support
+  - End Point Groups (epgs)
+    - Static with physical path
+    - Dynamic with VMM domain support
+  - Endpoint Security Groups (esgs)
+    - EPG to ESG support
 - Contracts
- - Standard Contracts
- - Filters
+  - Standard Contracts
+  - Filters
 - Networking
- - Bridge Domains
-   - optional Layer 3 Subnet support
- - L3 Outs (one or more)
-   - External EPGs
-   - Routed, Sub-interface, SVI and Floating SVI support
-   - OSPF, BGP peering support
- - VRFs
-   - Optional Preferred Group support
+  - Bridge Domains
+    - optional Layer 3 Subnet support
+  - L3 Outs (one or more)
+    - External EPGs
+    - Routed, Sub-interface, SVI and Floating SVI support
+    - OSPF, BGP peering support
+  - VRFs
+    - Optional Preferred Group support
 - Policies
   - L4-7 Policy Based Redirection
 - Services
