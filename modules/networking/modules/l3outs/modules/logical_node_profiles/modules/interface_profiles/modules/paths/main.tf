@@ -10,7 +10,7 @@ terraform {
 
 ### Locals ###
 locals {
-  target_dn = var.path.interface_type == "port" ? format("topology/pod-%d/paths-%d/pathep-[%s]", var.path.port.pod, var.path.port.node, var.path.port_name) : var.path.interface_type == "vpc" ? format("topology/pod-%d/protpaths-%d-%d/pathep-[%s]", var.path.vpc.pod, var.path.vpc.side_a.node, var.path.vpc.side_b.node, var.path.vpc.vpc_name) : null
+  target_dn = var.path.interface_type == "port" ? format("topology/pod-%d/paths-%d/pathep-[%s]", var.path.port.pod, var.path.port.node, var.path.port.port_name) : var.path.interface_type == "vpc" ? format("topology/pod-%d/protpaths-%d-%d/pathep-[%s]", var.path.vpc.pod, var.path.vpc.side_a.node, var.path.vpc.side_b.node, var.path.vpc.vpc_name) : null
 }
 
 ### L3Out Interface Path Attachment ###
