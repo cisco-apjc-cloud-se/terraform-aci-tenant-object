@@ -106,10 +106,16 @@ variable "tenant" {
           vrf_name    = string
           })
         l3_domain     = string
-        #### OSPF Policy ####
+        ### Enable BGP ####
+        bgp_policy = object({
+          enabled     = optional(bool)
+          description = optional(string)
+          annotation  = optional(string)
+          name_alias  = optional(string)
+          })
+        #### Enable OSPF ####
         ospf_policy = object({
           enabled     = optional(bool)
-          ## Too many optional?  Should be optional object?
           description = optional(string)
           area_cost   = optional(number)
           area_id     = optional(string)

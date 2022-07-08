@@ -104,3 +104,13 @@ resource "aci_l3out_ospf_external_policy" "ospf" {
   area_id        = local.l3out.ospf_policy.area_id
   area_type      = local.l3out.ospf_policy.area_type # "nssa", "regular", "stub"
 }
+
+### L3Out BGP External Policy ###
+resource "aci_l3out_bgp_external_policy" "example" {
+  count = local.l3out.bgp_policy.enabled  == true ? 1 : 0
+
+  l3_outside_dn = local.l3out.use_existing == true ? data.aci_l3_outside.l3out[0].id : aci_l3_outside.l3out[0].id
+  annotation    = local.l3out.bgp_policy.annotation
+  description   = local.l3out.bgp_policy.description
+  name_alias    = local.l3out.bgp_policy.name_alias
+}
