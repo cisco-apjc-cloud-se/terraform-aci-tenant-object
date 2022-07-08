@@ -121,7 +121,6 @@ variable "tenant" {
           use_existing  = optional(bool)
           description   = string
           bgp_peers = map(object({
-            parent_dn                       = string
             peer_ip                         = string
             peer_asn                        = number
             addr_t_ctrl                     = optional(list(string))

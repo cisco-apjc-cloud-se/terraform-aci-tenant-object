@@ -2,7 +2,6 @@ variable "lprof_dn" {}
 
 variable "bgp_peer" {
   type = object({
-    parent_dn                       = string
     peer_ip                         = string # addr
     peer_asn                        = number # as_number
     addr_t_ctrl                     = optional(list(string)) # Ucast/Mcast Addr Type AF Control. (Multiple Comma-Delimited values are allowed. E.g., "af-mcast,af-ucast"). Apply "" to clear all the values. Allowed values: "af-mcast", "af-ucast". Default value: "af-ucast".
