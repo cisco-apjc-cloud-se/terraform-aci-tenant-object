@@ -78,13 +78,3 @@ resource "aci_l3out_floating_svi" "svi" {
     }
   }
 }
-
-### ACI BGP Peer Profiles Module ###
-module "bgp_peers" {
-  for_each = var.floating_svi.bgp_peers
-  source = "./modules/bgp_peers"
-
-  ### VARIABLES ###
-  path_dn  = aci_l3out_floating_svi.svi.id
-  bgp_peer  = each.value
-}
