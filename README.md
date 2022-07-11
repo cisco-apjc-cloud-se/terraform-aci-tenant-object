@@ -35,6 +35,11 @@ The input variable object for this module is structured on the ACI Tenant tab (A
 - Services
   - L4-7 Policy Based Routing Support
 
+## Caveats
+While care has been taken to reduce the number of cross-references, it may be possible to refer to an object that does not exist yet. Examples identified currently are:
+- Creating L3Out External Endpoint Group(ExtEPGs) with Contract Master ExtEPG in the same tenant.  It is possible that referenced ExtEPG maynot be created when the ExtEPG with the Control Master configuration is created.  The only workaround for this is to ensure the Contract Master ExtEPG is created first by running the configuration plan twice.
+- Creating a L4-7 Service Graph Template instance on a Contract Subject using a Bridge Domain between the Device and the ACI fabric.  It is possible the Bridge Domain will not be built before the L4-7 Service Graph instance is created.  Again, the work around is to build the necessary Bridge Domains, L4-7 Devices and PBR policies in one plan, then apply the service graph template to the contrct subject in a later plan.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
