@@ -1,7 +1,9 @@
 # terraform-aci-tenant-object
 Terraform module to build a ACI Tenant in entirety from single HCL/JSON nested object variable file.  This should simplify tenant configuration and allow for easier configuration changes and rollbacks.  
 
-This module also support re-using existing configuration through an optional `use_existing` parameter at most levels.  This allows Terraform to manage child objects without fully managing the parent object (i.e. Terraform can add VRFs to the common tenant without disturbing existing configuration).  
+Please also see the related module [terraform-aci-fabric-object](https://github.com/cisco-apjc-cloud-se/terraform-aci-fabric-object) for building and managing physical ACI Fabric configuration (in entirety) from a single HCL/JSON/YAML object variable file.
+
+This module supports re-using existing configuration through an optional `use_existing` parameter at most levels.  This allows Terraform to manage child objects without fully managing the parent object (i.e. Terraform can add VRFs to the common tenant without disturbing existing configuration).  
 
 Where appropriate, the module will also allow re-using configuration from other tenants though this assumes the configuraiton is already present in that tenant (i.e. common filters or shared L3outs can be leveraged from the common tenant).
 
@@ -10,7 +12,7 @@ This module is used in the DevNet example ACI Day 2 Terraform Examples where the
 Please see this link for examples of how this module is used.
 [ACI Day 2 Automation with Terraform](https://github.com/cisco-apjc-cloud-se/aci-basic-day2)
 
-The input variable object for this module is structured on the ACI Tenant tab (ACI 5.2+).  The following configuration items are supported.  
+The input variable object for this module is structured on the ACI Tenant tab (ACI 5.2+).  The following configuration items are supported:  
 
 - Applications Profiles (aps)
   - End Point Groups (epgs)
@@ -34,6 +36,8 @@ The input variable object for this module is structured on the ACI Tenant tab (A
   - L4-7 Policy Based Redirection
 - Services
   - L4-7 Policy Based Routing Support
+
+For any additonal requests, please raise an enhancement request within the GitHub repository.
 
 ## Caveats
 While care has been taken to reduce the number of cross-references, it may be possible to refer to an object that does not exist yet. Examples identified currently are:
