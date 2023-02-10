@@ -30,6 +30,6 @@ output "internal_testing" {
   value = local.internal_testing
 }
 
-output "epg_map" {
+output "ap_epg_map" {
   value = local.epg_map
 }

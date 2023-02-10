@@ -26,7 +26,7 @@ locals {
   }
 
   ### EPG Lookup Map ###
-  epg_map = {
+  ap_epg_map = {
     for key, ap in local.tenant.aps :
      key => {
        ap_name = ap.ap_name
