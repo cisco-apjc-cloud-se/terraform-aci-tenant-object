@@ -31,5 +31,5 @@ output "internal_testing" {
 }
 
 output "ap_epg_map" {
-  value = local.epg_map
+  value = local.ap_epg_map
 }
