@@ -63,7 +63,9 @@ variable "ap" {
         # tenant_name = optional(string)
         esg_name    = optional(string)
         })
-      preferred_group = optional(string)
+      fwd_ctrl                = optional(string)
+      intraepg_isolation      = optional(string)
+      preferred_group         = optional(string)
       paths = map(object({
         pod       = number
         leaf_node = number

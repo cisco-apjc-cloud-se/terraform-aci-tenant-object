@@ -53,6 +53,8 @@ resource "aci_application_epg" "epg" {
   application_profile_dn    = var.ap.id
   name                      = var.epg.epg_name
   description               = var.epg.description
+  fwd_ctrl                  = var.epg.fwd_ctrl == null ? "none" : var.epg.fwd_ctrl # "none", "proxy-arp"
+  pc_enf_pref               = var.epg.intraepg_isolation == null ? "unenforced" : var.epg.intraepg_isolation # "unenforced", "enforced".
   pref_gr_memb              = var.epg.preferred_group
   relation_fv_rs_bd         = var.epg.bd.tenant_name != null ? data.aci_bridge_domain.bd[0].id : local.bd_dn
   # relation_fv_rs_bd         = local.bd_dn
